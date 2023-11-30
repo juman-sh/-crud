@@ -51,16 +51,16 @@ function Edit() {
 
  const sendData = async(e)=>{
   e.preventDefault();
-  setLoader(true);
   if(Object.keys(validationUsersData(user)).length > 0){
     setErrors(validationUsersData(user));
   }
   else{
     try{
-       const {data} = await axios.post("https://crud-users-gold.vercel.app/users",user);
+      setLoader(true);
+       const {data} = await axios.put(`https://crud-users-gold.vercel.app/users/${userId.id}`,user);
        console.log(data);
        if(data.message == 'success'){
-          toast("User Added successfully");
+          toast("User Edited successfully");
           navigate('/user/index');
           setLoader(false);
          }
