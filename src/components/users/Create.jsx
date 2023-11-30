@@ -35,12 +35,12 @@ function Create() {
 
  const sendData = async(e)=>{
   e.preventDefault();
-  setLoader(true);
   if(Object.keys(validationUsersData(user)).length > 0){
     setErrors(validationUsersData(user));
   }
   else{
     try{
+      setLoader(true);
        const {data} = await axios.post("https://crud-users-gold.vercel.app/users",user);
        console.log(data);
        if(data.message == 'success'){
@@ -151,7 +151,6 @@ function Create() {
             <Input erorrs={erorrs} id="name" title="User Name" type="text" name="name"  placeholder="user name" value={user.name} onChange={()=>changeData(event)} />
             <Input erorrs={erorrs} id="email" title="User Email" type="text" name='email' placeholder="user email" value={user.email} onChange={()=>changeData(event)} />
             <Input erorrs={erorrs} id="password" title="User Password" type="password" name='password' placeholder="password" value={user.password } onChange={()=>changeData(event)} />
-            {errorBack && <p className='text-danger'>{errorBack}</p>}
   <div className="mb-3">
     <input type="submit" className="form-control" value='Add User' />
   </div>

@@ -169,7 +169,7 @@ function Edit() {
             <Input erorrs={erorrs} id="password" title="User Password" type="password" name='password' placeholder="password" value={user.password } onChange={()=>changeData(event)} />
             {errorBack && <p className='text-danger'>{errorBack}</p>}
   <div className="mb-3">
-    <input type="submit" className="form-control" value='Add User' />
+    <input type="submit" className="form-control" value='Edit User' />
   </div>
 
 </div>

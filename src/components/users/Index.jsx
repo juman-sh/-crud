@@ -154,6 +154,7 @@ function Index() {
     }
   </tbody>
 </table>
+<button className='btn'><Link to={'/user/create'}>Create Page</Link></button>
 
     </div>
   </div>

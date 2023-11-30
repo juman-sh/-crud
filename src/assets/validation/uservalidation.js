@@ -6,12 +6,18 @@ export const validationUsersData = (values)=>{
     else if(values.name.length < 3){
         errors.name = "User name must be at least 3 characters";
     }
+    else{
+        errors.name = "User is existing";
+    }
 
     if(values.email.trim() ==''){
         errors.email = "User email is required";
     }
     else if(values.email.length < 9){
         errors.email = "User email must be at least 9 characters";
+    }
+    else{
+        errors.email = "User is existing";
     }
 
     if(values.password.trim() ==''){
